@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { taskAdded } from "./task";
+import { taskAdded, taskDeleted } from "./task";
 
 
 const store = configureStore();
@@ -21,3 +21,7 @@ store.dispatch(taskAdded({
     description:"going to gym",
     status:"Done"
 }))
+
+store.dispatch(taskDeleted({id:1}))
+
+console.log(store.getState);
